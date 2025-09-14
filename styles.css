@@ -2,8 +2,9 @@
 
 :root {
   --primary-color: #15616d;
+  /* --secondary-color: #B55D3B; */
   --secondary-color: #e7741c;
-  --background-color: #fcfaf8;
+  --background-color: #f3f3f3;
 }
 
 /* GENERAL */
@@ -64,8 +65,8 @@ body {
 }
 
 .heading-container {
-  margin: 20px auto;
-  width: 70%;
+  margin: 10px auto;
+  width: 80%;
 }
 
 .homeSection {
@@ -74,6 +75,8 @@ body {
 
 .homeSection p {
   text-align: left;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 #logo {
@@ -83,29 +86,46 @@ body {
   display: block;
   margin: 0 auto;
   margin-top: 3em;
+  margin-bottom: 3em;
+}
+
+#menu {
+  display: block;
+  margin: 20px;
+  margin-left: auto;
 }
 
 nav {
   text-align: center;
-  padding: 2rem;
-  padding-bottom: 0;
   background-color: #e3e3e3;
 }
 
-nav ul {
-  display: flex;
-  flex-direction: column;
+nav ul li {
   justify-content: space-between;
-  margin-top: 20px;
+  margin-top: 10px;
   list-style-type: none;
+  padding: 5px;
+}
+
+nav ul li:last-child {
+  margin-bottom: 10px;
+}
+
+nav ul {
   padding: 0;
+  margin: 0;
+  flex-direction: column;
+  display: none;
+}
+
+nav ul.open {
+  display: flex;
 }
 
 nav a {
   text-decoration: none;
   font-size: x-large;
   font-weight: bold;
-  padding-bottom: 10px;
   border-bottom: 2px solid transparent;
 }
 
@@ -115,9 +135,11 @@ nav a:hover {
   border-bottom: var(--secondary-color) solid 2px;
 }
 
-.alert {
+#alert {
   font-weight: bold;
-  color: rgb(176, 52, 52);
+  /* color: rgb(176, 52, 52); */
+  color: #ad4b00;
+  text-align: center;
 }
 
 h1,
@@ -128,6 +150,29 @@ h5,
 h6 {
   text-align: center;
   margin-bottom: 0.5em;
+}
+
+#locations {
+  margin: 0 auto;
+  width: 80%;
+  
+  display: flex;
+  justify-content: center; /* centers children horizontally */
+  gap: 2rem;               /* space between chillicothe/jacksonville */
+  flex-wrap: wrap;         /* let them stack if screen is narrow */
+}
+
+#chillicothe,
+#jacksonville {
+  flex: 1 1 300px;          /* responsive sizing, min width 300px */
+  display: flex;
+  flex-direction: column;
+  align-items: center;      /* center content inside */
+}
+
+#locations iframe {
+  margin-top: 30px;
+  box-shadow: #333 2px 2px 8px;
 }
 
 /* h1 {
@@ -218,6 +263,7 @@ iframe {
   width: 200px;
   height: auto;
   object-fit: cover;
+  margin-top: 60px;
 }
 
 /* Table */
@@ -242,8 +288,25 @@ section {
 }
 
 section p {
-  width: 80%;
+  max-width: 80ch;
+  margin-left: auto;
+  margin-right: auto;
+
+}
+
+dt {
+  font-weight: bold;
+  margin-top: 1em;
+}
+
+#services-and-pricing dl{
+  text-align: left;
+  width: fit-content;
   margin: 0 auto;
+}
+
+.techniques-list {
+  text-align: left;
 }
 
 /* LARGE SCREEN STYLES */
@@ -267,7 +330,6 @@ section p {
   #home-h1 {
     font-size: 4em;
     line-height: 1.1;
-    margin-top: 0;
   }
 
   .heading-container {
@@ -282,11 +344,24 @@ section p {
     margin: 0;
   }
 
+  p {
+    max-width: 80ch;
+  }
+
+  ul {
+    max-width: 80ch;
+    margin: 20px auto;
+  }
+
   #logo {
     width: 450px;
     max-width: 100%;
     display: block;
     margin: 50px auto;
+  }
+
+  #menu {
+    display: none;
   }
 
   nav {
@@ -310,6 +385,14 @@ section p {
     list-style: none;
   }
 
+  nav ul li:last-child {
+    margin-bottom: 0;
+  }
+
+  nav ul {
+    margin: 0 auto;
+  }
+
   .homeSection {
     min-height: 500px;
   }
@@ -325,7 +408,6 @@ section p {
   }
 
   #about {
-    display: flex;
     align-items: center;
     gap: 2rem;
     padding: 2rem;
@@ -345,9 +427,13 @@ section p {
     margin-top: 0;
   }
 
-  #about .about-text {
+  /* #about .about-text {
     max-width: 600px;
     margin-top: 0.5rem;
+  } */
+
+  #locations {
+    display: flex;
   }
 }
 
@@ -357,6 +443,20 @@ section p {
   width: 1.5em;
   height: 1.5em;
   --svg: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cpath d='m12.593 23.258l-.011.002l-.071.035l-.02.004l-.014-.004l-.071-.035q-.016-.005-.024.005l-.004.01l-.017.428l.005.02l.01.013l.104.074l.015.004l.012-.004l.104-.074l.012-.016l.004-.017l-.017-.427q-.004-.016-.017-.018m.265-.113l-.013.002l-.185.093l-.01.01l-.003.011l.018.43l.005.012l.008.007l.201.093q.019.005.029-.008l.004-.014l-.034-.614q-.005-.018-.02-.022m-.715.002a.02.02 0 0 0-.027.006l-.006.014l-.034.614q.001.018.017.024l.015-.002l.201-.093l.01-.008l.004-.011l.017-.43l-.003-.012l-.01-.01z'/%3E%3Cpath fill='%23000' d='M16.552 22.133c-1.44-.053-5.521-.617-9.795-4.89c-4.273-4.274-4.836-8.354-4.89-9.795c-.08-2.196 1.602-4.329 3.545-5.162a1.47 1.47 0 0 1 1.445.159c1.6 1.166 2.704 2.93 3.652 4.317a1.504 1.504 0 0 1-.256 1.986l-1.951 1.449a.48.48 0 0 0-.142.616c.442.803 1.228 1.999 2.128 2.899s2.153 1.738 3.012 2.23a.483.483 0 0 0 .644-.162l1.27-1.933a1.503 1.503 0 0 1 2.056-.332c1.407.974 3.049 2.059 4.251 3.598a1.47 1.47 0 0 1 .189 1.485c-.837 1.953-2.955 3.616-5.158 3.535'/%3E%3C/g%3E%3C/svg%3E");
+  background-color: currentColor;
+  -webkit-mask-image: var(--svg);
+  mask-image: var(--svg);
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-size: 100% 100%;
+  mask-size: 100% 100%;
+}
+
+.mingcute--menu-fill {
+  display: inline-block;
+  width: 3em;
+  height: 3em;
+  --svg: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cg fill='none'%3E%3Cpath d='m12.593 23.258l-.011.002l-.071.035l-.02.004l-.014-.004l-.071-.035q-.016-.005-.024.005l-.004.01l-.017.428l.005.02l.01.013l.104.074l.015.004l.012-.004l.104-.074l.012-.016l.004-.017l-.017-.427q-.004-.016-.017-.018m.265-.113l-.013.002l-.185.093l-.01.01l-.003.011l.018.43l.005.012l.008.007l.201.093q.019.005.029-.008l.004-.014l-.034-.614q-.005-.018-.02-.022m-.715.002a.02.02 0 0 0-.027.006l-.006.014l-.034.614q.001.018.017.024l.015-.002l.201-.093l.01-.008l.004-.011l.017-.43l-.003-.012l-.01-.01z'/%3E%3Cpath fill='%23000' d='M20 17.5a1.5 1.5 0 0 1 .144 2.993L20 20.5H4a1.5 1.5 0 0 1-.144-2.993L4 17.5zm0-7a1.5 1.5 0 0 1 0 3H4a1.5 1.5 0 0 1 0-3zm0-7a1.5 1.5 0 0 1 0 3H4a1.5 1.5 0 1 1 0-3z'/%3E%3C/g%3E%3C/svg%3E");
   background-color: currentColor;
   -webkit-mask-image: var(--svg);
   mask-image: var(--svg);
