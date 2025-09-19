@@ -4,6 +4,7 @@
   --primary-color: #15616d;
   /* --secondary-color: #B55D3B; */
   --secondary-color: #e7741c;
+  /* --secondary-color: #714f35; */
   --background-color: #f3f3f3;
   --header-footer-bg-color: #e3e3e3;
 }
@@ -97,6 +98,7 @@ body {
   position: absolute;
   top: 30px;
   right: 10px;
+  color: #152B2E;
 }
 
 nav {
@@ -224,7 +226,7 @@ h2 {
 h3 {
   font-size: 1.75rem;
   font-weight: 700;
-  color: #333;
+  color: #152B2E;
   margin-top: 1em;
   margin-bottom: 0.4em;
 }
