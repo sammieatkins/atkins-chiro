@@ -349,6 +349,11 @@ dt {
   margin-top: 0;
 }
 
+.bold {
+  font-weight: 1000;
+  color: var(--secondary-color);
+}
+
 /* MEDIUM SCREEN STYLES */
 @media (min-width: 600px) {
   #footer-logo {
