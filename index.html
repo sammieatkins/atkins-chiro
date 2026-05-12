@@ -1,3 +1,4 @@
+<!-- FIX FOCUS INDICATOR -->
 <!doctype html>
 <html lang="en">
   <head>
@@ -10,16 +11,23 @@
   </head>
   <body>
     <header>
-      <a href="#main-content" class="skip-link">Skip to content</a>
-      <div class="mingcute--menu-fill" id="menu"></div>
-      <a href="/"
-        ><img
-          src="images/logo.png"
-          alt="Atkins Chiropractic Treatment Home"
-          id="logo"
-      /></a>
-      <nav>
-        <ul class="nav-links">
+<header>
+  <a href="#main-content" class="skip-link">Skip to content</a>
+
+  <a href="/" id="logo-link">
+    <img src="images/logo.png" alt="Atkins Chiropractic Treatment Home" id="logo" />
+  </a>
+
+  <button
+    id="menu"
+    class="mingcute--menu-fill"
+    aria-label="Open navigation menu"
+    aria-expanded="false"
+    aria-controls="primary-navigation"
+  ></button>
+
+  <nav>
+    <ul class="nav-links" id="primary-navigation">
           <li><a href="/">Home</a></li>
           <li><a href="#schedule">Schedule</a></li>
           <li><a href="#about">About</a></li>
@@ -283,8 +291,6 @@
               </section>
             </div>
           </div>
-
-          <!-- Add animation to hamburger menu with an X -->
         </div>
       </div>
     </main>
